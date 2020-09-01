@@ -10,7 +10,6 @@ computer_parts = [] # create an empty list
 
 while current_choice != "0":
     if current_choice in valid_choices:
-        print("Adding {}".format(current_choice))
         # if current_choice == "1":
         #     computer_parts.append("computer")
         # elif current_choice == "2":
@@ -25,7 +24,14 @@ while current_choice != "0":
         #     computer_parts.append("hdmi cable")
         index = int(current_choice) - 1
         chosen_part = available_parts[index]
-        computer_parts.append(chosen_part)
+        if chosen_part in computer_parts:
+            # it's already in, so remove it
+            computer_parts.remove(chosen_part)
+            print("Removing {0}. {1}".format(current_choice, available_parts[index]))
+        else:
+            computer_parts.append(chosen_part)
+            print("Adding {0}. {1}".format(current_choice, available_parts[index]))
+        print("Your list now contains: {}".format(computer_parts))
     else:
         print("Please add options from the list below:")
         # for part in available_parts:

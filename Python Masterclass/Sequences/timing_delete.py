@@ -1,8 +1,8 @@
 import timeit
 
-max_value = 1000000000
+max_value = 100000000
 min_valid = 10
-max_valid = 999999997
+max_valid = 99999997
 
 data_list1 = list(range(max_value))
 data_list2 = list(range(max_value))

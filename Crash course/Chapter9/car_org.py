@@ -1,5 +1,4 @@
-"""A set of classes that can be used to represent gas and electric cars."""
-
+"""A class that can be used to represent a car."""
 
 class Car:
     """A simple attempt to represent a car."""
@@ -34,6 +33,16 @@ class Car:
         self.odometer_reading += miles
 
 
+class ElectricCar(Car):
+    """Represent aspects of a car, specific to electric vehicles"""
+
+    def __init__(self, make, model, year):
+        """Initialize attributes of the parent class.
+           Then initialize attributes specific to an electric car."""
+        super().__init__(make, model, year)
+        self.battery = Battery()
+
+
 class Battery:
     """A simple attempt to model a battery for an electric car."""
 
@@ -59,11 +68,24 @@ class Battery:
             self.battery_size = 100
 
 
-class ElectricCar(Car):
-    """Represent aspects of a car, specific to electric vehicles"""
+my_new_car = Car('audi', 'a4', 2019)
+print(my_new_car.get_descriptive_name())
+my_new_car.update_odometer(23)
+my_new_car.read_odometer()
 
-    def __init__(self, make, model, year):
-        """Initialize attributes of the parent class.
-           Then initialize attributes specific to an electric car."""
-        super().__init__(make, model, year)
-        self.battery = Battery()
+my_used_car = Car('subaru', 'outback', 2015)
+print(my_used_car.get_descriptive_name())
+
+my_used_car.update_odometer(23_500)
+my_used_car.read_odometer()
+
+my_used_car.increment_odometer(100)
+my_used_car.read_odometer()
+
+print()
+my_tesla = ElectricCar('tesla', 'model s', 2019)
+print(my_tesla.get_descriptive_name())
+my_tesla.battery.describe_battery()
+my_tesla.battery.get_range()
+my_tesla.battery.upgrade_battery()
+my_tesla.battery.get_range()

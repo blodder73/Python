@@ -1,0 +1,4 @@
+In python you can work with files
+In python you can iterate through variables
+In python you can work with lists
+In python you can work with dictionaries

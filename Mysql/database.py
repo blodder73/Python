@@ -28,5 +28,12 @@ sqlstuff = "INSERT INTO users (name, email, age) VALUES (%s, %s, %s)"
 
 record1 = ("John", "john@codemy.com", 40)
 
-my_cursor.execute(sqlstuff, record1)
-mydb.commit()
+#my_cursor.execute(sqlstuff, record1)
+#mydb.commit()
+
+#my_cursor.execute("DELETE FROM users WHERE user_id = 3")
+#mydb.commit()
+
+my_cursor.execute("SELECT * FROM users")
+for user in my_cursor:
+    print(user)

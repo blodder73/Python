@@ -37,3 +37,6 @@ record1 = ("John", "john@codemy.com", 40)
 my_cursor.execute("SELECT * FROM users")
 for user in my_cursor:
     print(user)
+
+r = requests.get('htpps://youtube.com')
+print(r.status_code)

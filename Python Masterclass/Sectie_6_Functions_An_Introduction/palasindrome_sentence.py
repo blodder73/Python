@@ -1,6 +1,7 @@
 def is_palindrome(string):
     return string[::-1].casefold() == string.casefold()
 
+
 def palindrome_sentence(string):
     result = ""
     for char in string:

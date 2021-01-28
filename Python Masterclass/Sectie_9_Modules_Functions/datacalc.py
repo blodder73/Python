@@ -23,6 +23,6 @@ start_time = my_timer()
 input("Press enter to stop")
 
 end_time = my_timer()
-print("Started at " + time.strftime("%f", time.localtime(start_time)))
+print("Started at " + time.strftime("%X", time.localtime(start_time)))
 print("Ended at " + time.strftime("%X", time.localtime(end_time)))
 print("Your reaction time was {} seconds".format(end_time - start_time))
